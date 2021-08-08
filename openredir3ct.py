@@ -1,3 +1,4 @@
+#!/usr/bin/env python3 
 import requests
 import os
 import sys
@@ -20,7 +21,7 @@ def fuzz(ip,filename):
 				print('[-] ' + filename + ' access denied.')
 				sys.exit(0)
 			print('\n\033[1;33m[+] Reading Payloads From: ' + filename + '\033[1;m\n')
-			f = open(filename,'r')
+			f = open(filename,'r', encoding='utf8')
 			for line in f.readlines():
 				payload = line.strip('\n')
 				try:
@@ -30,7 +31,7 @@ def fuzz(ip,filename):
 					else:
 						print('\033[1;36m'+r.url+'\033[1;m'+'\033[1;31m [-]No Redirection\033[1;m')
 				except IOError:
-					print('\033[1;33m['+IOError+'\033[1;m')
+					print('\033[1;33m['+ IOError +'\033[1;m')
 		
 if __name__ == '__main__':
 	parse = argparse.ArgumentParser()
