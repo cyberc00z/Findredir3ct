@@ -14,5 +14,7 @@ $python openredir3ct.py -t https;//targetsite
 or
 $python openredir3ct.py -t https;//targetsite -f youryownpayload.txt
 
+## Almost sucks no better results found in real world. Probably need smart payloads.
+
 ## Thanks
    OWASP 
